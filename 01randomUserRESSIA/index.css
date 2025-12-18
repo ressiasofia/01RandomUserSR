@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+
+/*colorazioni utilizzate*/
+:root {
+  --cream: #EFF8E2;
+  --lightGrey: #CECFC7;
+  --lavander: #ADA8B6;
+  --darkPurple: #23022E;
+  --purple: #573280;
+}
+
+/*background color*/
+.bg-cream { background-color: var(--cream) !important; }
+.bg-lightGrey { background-color: var(--lightGrey) !important; }
+.bg-lavander { background-color: var(--lavander) !important; }
+.bg-darkPurple { background-color: var(--darkPurple) !important; }
+.bg-purple { background-color: var(--purple) !important; }
+
+/*text color*/
+.text-cream { color: var(--cream) !important; }
+.text-lightGrey { color: var(--lightGrey) !important; }
+.text-lavander { color: var(--lavander) !important; }
+.text-darkPurple { color: var(--darkPurple) !important; }
+.text-purple { color: var(--purple) !important; }
+
+/*border color*/
+.border-cream { border-color: var(--cream) !important; }
+.border-lightGrey { border-color: var(--lightGrey) !important; }
+.border-lavander { border-color: var(--lavander) !important; }
+.border-darkPurple { border-color: var(--darkPurple) !important; }
+.border-purple { border-color: var(--purple) !important; }
+
+html,body{
+    background-color: #ADA8B6;
+}
