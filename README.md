@@ -1,6 +1,6 @@
 # Random User Generator - Ressia Sofia 
 
-Classe 4BI, IIS G.Vallauri Fossano(CN)
+Classe 4BINF, IIS G.Vallauri Fossano(CN)
 
 # Specifiche tecniche del progetto
 
