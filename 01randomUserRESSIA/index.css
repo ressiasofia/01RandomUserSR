@@ -12,6 +12,14 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap'); 
+@font-face {
+	font-family: BBHBartle;   /* nome da assegnare al font */
+	src: local(BBHBartle),    /* nome del font eventualmente gi� installato sulla macchina */
+		 url(./font/BBH_Bartle/BBHBartle-Regular.ttf)  format('truetype'); /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
+	font-weight: normal;
+	font-style: normal;
+}
 
 /*colorazioni utilizzate*/
 :root {
@@ -45,4 +53,18 @@
 
 html,body{
   background-color: lightGrey;
+}
+#wrapper{
+  margin-top: 60px;
+  padding: 30px;
+  text-align: center;
+  font-family: Comfortaa,sans-serif;
+}
+#title{
+  font-family: BBHBartle,sans-serif;
+  color: #23022E;
+  font-size: 20px;
+}
+.navbar {
+  font-family: Comfortaa, sans-serif;
 }

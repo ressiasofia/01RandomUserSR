@@ -22,6 +22,7 @@ html,body{
     text-align: center;
     font-size: 40px;
     font-family: BBHBartle,sans-serif;
+    cursor: pointer;
 }
 body{
     align-self: center;
@@ -41,4 +42,12 @@ footer {
     padding: 5px;
 
     font-size: 20px;
+}
+span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+span:hover {
+  transform: translateY(-15px);
 }
