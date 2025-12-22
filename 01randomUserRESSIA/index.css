@@ -4,6 +4,15 @@
     box-sizing: content-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@font-face {
+	font-family: Comfortaa;   /* nome da assegnare al font */
+	src: local(Comfortaa),    /* nome del font eventualmente gi� installato sulla macchina */
+		 url(./font/Comfortaa/static/Comfortaa-Bold.ttf)  format('truetype'); /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
+	font-weight: normal;
+	font-style: normal;
+}
+
 /*colorazioni utilizzate*/
 :root {
   --cream: #EFF8E2;
