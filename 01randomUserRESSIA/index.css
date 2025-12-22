@@ -35,5 +35,5 @@
 .border-purple { border-color: var(--purple) !important; }
 
 html,body{
-    background-color: #ADA8B6;
+  background-color: lightGrey;
 }
