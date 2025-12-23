@@ -56,7 +56,7 @@ html,body{
 }
 #wrapper{
   margin-top: 60px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   font-family: Comfortaa,sans-serif;
 }
@@ -67,4 +67,12 @@ html,body{
 }
 .navbar {
   font-family: Comfortaa, sans-serif;
+}
+
+/*Main: options body */
+#main > #optionsbody{
+  border: 3px solid #EFF8E2;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
 }

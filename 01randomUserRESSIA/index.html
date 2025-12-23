@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./index.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="./jsAxios/axios@1.13.min.js" defer></script>
+    <script src="./jsAxios/libreria.js" defer></script>
+
     <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css">
+
     <title>Generate in one click</title>
     <link rel="icon" href="./img/click.png">
 </head>
+
 <body>
     <div class="container mt-3">
         <nav class="navbar navbar-expand-lg bg-lavander fixed-top">
             <div class="container-fluid">
                 <a href="./firstPage.html" class="navbar-brand"><img src="./img/click.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                 
+
                 <div class="collapse navbar-collapse" id="navBar">
-                    <ul class="navbar-nav me-2 mb-2 mb-lg-10">
-                        <li class="tag-item"><a href="#" class="nav-link text-darkPurple">All users</a></li>
-                        <li class="tag-item"><a href="#" class="nav-link text-darkPurple">Favorites</a></li>
+                    <ul class="navbar-nav">
+                        <li class="tag-item" id="allUsers"><a href="#" class="nav-link text-darkPurple">All users</a>
+                        </li>
+                        <li class="tag-item" id="stars"><a href="#" class="nav-link text-darkPurple">Stars</a></li>
+
+                        <li class="tag-item text-darkPurple" id="search">
+                            <div class="form">
+                                <input type="text" class="form-control" placeholder="🔍︎ search" id="txtRicerca">
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
-            </div> 
+            </div>
         </nav>
     </div>
-    
-    <div id="wrapper">
-        <div id="title">Generate random users in a simple click</div>
 
-        
+    <div id="wrapper">
+        <div id="title">titolo carino che non so ancora</div>
+
+        <div id="main">
+            <div id="optionsbody" class="row text-darkPurple">
+                <div class="col-auto">
+                   <label for="form-label">Users to view: 1</label>
+                   <input type="range" min="1" max="5000" value="1" class="form-range" id="slider">
+                </div>
+            </div>
+            <div id="cardbody">
+
+            </div>
+        </div>
+
     </div>
 
     <div class="container-fluid bg-lavander p-2 fixed-bottom" id="footer">
@@ -50,10 +80,12 @@
             </div>
 
             <div class="col text-darkPurple">
-                Created by <a href="https://www.instagram.com/sofiiressia" class="text-darkPurple"> Sofia Ressia</a>. All Rights Reserved
+                Created by <a href="https://www.instagram.com/sofiiressia" class="text-darkPurple"> Sofia Ressia</a>.
+                All Rights Reserved
             </div>
 
         </div>
     </div>
 </body>
+
 </html>
