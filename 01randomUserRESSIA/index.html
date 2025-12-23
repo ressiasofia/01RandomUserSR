@@ -35,10 +35,9 @@
 
                 <div class="collapse navbar-collapse" id="navBar">
                     <ul class="navbar-nav">
-                        <li class="tag-item" id="allUsers"><a href="#" class="nav-link text-darkPurple">All users</a>
-                        </li>
+                        <li class="tag-item" id="allUsers"><a href="#" class="nav-link text-darkPurple">All users
+                                photos</a></li>
                         <li class="tag-item" id="stars"><a href="#" class="nav-link text-darkPurple">Stars</a></li>
-
                         <li class="tag-item text-darkPurple" id="search">
                             <div class="form">
                                 <input type="text" class="form-control" placeholder="🔍︎ search" id="txtRicerca">
@@ -54,14 +53,32 @@
     <div id="wrapper">
         <div id="title">titolo carino che non so ancora</div>
 
-        <div id="main">
-            <div id="optionsbody" class="row text-darkPurple">
-                <div class="col-auto">
-                   <label for="form-label">Users to view: 1</label>
-                   <input type="range" min="1" max="5000" value="1" class="form-range" id="slider">
-                </div>
-            </div>
+        <div id="main" class="d-flex">
             <div id="cardbody">
+
+            </div>
+            
+            <div id="optionsbody" class="col text-darkPurple">
+            <p>Customize your user: </p>
+            <br>
+                <div class="row-auto">
+                    <label for="form-label">Users to view: 1</label>
+                    <input type="range" min="1" max="5000" value="1" class="form-range" id="slider">
+                </div>
+            <br>
+                <div class="row-auto">
+                    <select name="cmdGender" id="cmdGender">
+                        <option>All</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            <br>
+                <div class="row-auto">
+                <p>Choose the nationality:</p>
+                <input type="checkbox" class="form-check-input">
+                <img src="" alt="">
+                </div>
 
             </div>
         </div>

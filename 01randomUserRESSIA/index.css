@@ -4,6 +4,7 @@
     box-sizing: content-box;
 }
 
+/*font*/
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 @font-face {
 	font-family: Comfortaa;   /* nome da assegnare al font */
@@ -21,7 +22,7 @@
 	font-style: normal;
 }
 
-/*colorazioni utilizzate*/
+/****************************colors*******************************/
 :root {
   --cream: #EFF8E2;
   --lightGrey: #CECFC7;
@@ -29,7 +30,6 @@
   --darkPurple: #23022E;
   --purple: #573280;
 }
-
 /*background color*/
 .bg-cream { background-color: var(--cream) !important; }
 .bg-lightGrey { background-color: var(--lightGrey) !important; }
@@ -51,6 +51,7 @@
 .border-darkPurple { border-color: var(--darkPurple) !important; }
 .border-purple { border-color: var(--purple) !important; }
 
+/*******************************************************************/
 html,body{
   background-color: lightGrey;
 }
@@ -69,10 +70,52 @@ html,body{
   font-family: Comfortaa, sans-serif;
 }
 
-/*Main: options body */
+/*************************Main: options body ************************/
 #main > #optionsbody{
   border: 3px solid #EFF8E2;
   border-radius: 15px;
+  height: 500px;
   padding: 10px;
   margin: 10px;
+}
+/*slider color*/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*browser*/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #573280;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/*firefox*/
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #573280;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*listbox*/
+#cmdGender{
+  width: 200px;
+  border-radius: 5px;
+  background-color: #573280;
+  color: #EFF8E2;
+  text-align: center;
+}
+#optionsbody > .row-auto:nth-of-type(2){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main > #cardbody{
+  width: 1000px
 }
