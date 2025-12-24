@@ -51,56 +51,68 @@
     </div>
 
     <div id="wrapper">
-        <div id="title">Generate here your random user</div>
+        <h1 id="title">Generate here your random user</h1>
 
         <div id="main" class="d-flex">
-            <div id="cardbody">
 
+            <div id="cardbody">
+                <!-- <div class="card">
+                    <div class="cardInner">
+                        <div class="cardFront">
+
+                        </div>
+                        <div class="cardBack">
+
+                        </div>
+                    </div>
+                </div> -->
             </div>
 
-            <button class="btn btn-primary" data-bs-target="#modalCustome" data-bs-toggle="modal">
-                APRI
-            </button>
-            <!-- Modal -->
-            <div class="modal fade" id="modalCustome">
-                <div class="modal-dialog">
-                    <div class="modal-content bg-lavander">
-                        <div class="modal-header">
-                            <h1>Titolo del modal</h1>
-                            <button class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="col">
-                                <p>Customize your random user:</p>
-                                <br>
-                                <div class="row-auto">
-                                    <label for="form-label">Users to view: 1</label>
-                                    <input type="range" min="1" max="5000" value="1" class="form-range" id="slider">
-                                </div>
-                                <br>
-                                <div class="row-auto">
-                                    <select name="cmdGender" id="cmdGender">
-                                        <option>All</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                    </select>
-                                </div>
-                                <br>
-                                <div class="row-auto">
-                                    <p>Select the nationality:</p>
-                                    <input type="checkbox" class="form-check-input">
-                                    <img src="" alt="">
-                                </div>
-
+            <div id="customeBody">
+                <button class="btn btn-primary" data-bs-target="#modalCustome" data-bs-toggle="modal">
+                    APRI
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="modalCustome">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-lavander">
+                            <div class="modal-header">
+                                <h1>Titolo del modal</h1>
+                                <button class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
-                            <button class="btn btn-success">Salva</button>
+                            <div class="modal-body">
+                                <div class="col" id="custome">
+                                    <p>Customize your random user:</p>
+                                    <br>
+                                    <div class="row-auto">
+                                        <label for="form-label">Users to view: 1</label>
+                                        <input type="range" min="1" max="100" value="1" class="form-range" id="slider">
+                                    </div>
+                                    <br>
+                                    <div class="row-auto">
+                                        <select name="cmdGender" id="cmdGender">
+                                            <option>All</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div class="row-auto">
+                                        <p>Select the nationality:</p>
+                                        <input type="checkbox" class="form-check-input">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
+                                <button class="btn btn-success">Salva</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
-    font-family: Geom,sans-serif
+    font-family: Geom,sans-serif;
 }
 
 /*font*/
@@ -66,12 +66,21 @@ html,body{
   font-family: Geom,sans-serif;
   color: #23022E;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 .navbar {
   font-family: Geom, sans-serif;
 }
 
-/*************************Main: options body ************************/
+/**************************Main*********************************/
+#main{
+  border: 3px solid #23022E;
+  border-radius: 15px;
+  height: 500px;
+  width: 1000px;
+  margin: 0px auto;
+}
+/*************************Main: Custome section & modal ************************/
 #main > #optionsbody{
   border: 3px solid #EFF8E2;
   border-radius: 15px;
@@ -103,7 +112,6 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     cursor: pointer;
 }
-
 /*listbox*/
 #cmdGender{
   width: 400px;
@@ -112,17 +120,83 @@ input[type="range"]::-moz-range-thumb {
   color: #EFF8E2;
   text-align: center;
 }
-.row-auto:nth-of-type(2){
+#custome > .row-auto:nth-of-type(2){
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 /*nat*/
 
 
-/*Main: card body*/
+
+/******************Main: card body*********************/
 #main > #cardbody{
-  width: 1000px
+  width: 900px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
+
+#cardbody::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+    width: 400px;
+    height: 180px;
+    perspective: 1000px;
+    margin: 10px 5px;
+    border: 0px;
+    background: transparent;
+    user-select: none;
+}
+
+.cardInner {
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform 1s;
+}
+
+.cardInner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card:hover .cardInner:not(.flipped) {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.cardFront,
+.cardBack {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: #573280;
+    border-radius: 20px;
+    border: 3px, solid, #23022E;
+}
+
+.cardFront {
+    transform: rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.45s;
+    font-size: 25px;
+}
+.cardFront > img{
+  border-radius: 50%;
+  border: 2px solid #23022E;
+}
+.cardBack {
+    transform: rotateY(180deg);
+}
+
 
