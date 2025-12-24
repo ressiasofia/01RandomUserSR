@@ -6,7 +6,7 @@ const optionsBody = document.getElementById("optionsbody");
 const cardBody = document.getElementById("cardbody");
 
 const slider = document.getElementById("slider");
-const lblSlider = optionsBody.getElementsByTagName("label")[0];
+const lblSlider = document.getElementsByTagName("label")[0];
 
 //variable
 let nUsers = 0;

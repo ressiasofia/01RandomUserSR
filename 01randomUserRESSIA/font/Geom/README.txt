@@ -1,22 +1,32 @@
-Comfortaa Variable Font
-=======================
+Geom Variable Font
+==================
 
-This download contains Comfortaa as both a variable font and static fonts.
+This download contains Geom as both variable fonts and static fonts.
 
-Comfortaa is a variable font with this axis:
+Geom is a variable font with this axis:
   wght
 
-This means all the styles are contained in a single file:
-  Comfortaa-VariableFont_wght.ttf
+This means all the styles are contained in these files:
+  Geom-VariableFont_wght.ttf
+  Geom-Italic-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Comfortaa:
-  static/Comfortaa-Light.ttf
-  static/Comfortaa-Regular.ttf
-  static/Comfortaa-Medium.ttf
-  static/Comfortaa-SemiBold.ttf
-  static/Comfortaa-Bold.ttf
+in those cases you can use the static font files for Geom:
+  static/Geom-Light.ttf
+  static/Geom-Regular.ttf
+  static/Geom-Medium.ttf
+  static/Geom-SemiBold.ttf
+  static/Geom-Bold.ttf
+  static/Geom-ExtraBold.ttf
+  static/Geom-Black.ttf
+  static/Geom-LightItalic.ttf
+  static/Geom-Italic.ttf
+  static/Geom-MediumItalic.ttf
+  static/Geom-SemiBoldItalic.ttf
+  static/Geom-BoldItalic.ttf
+  static/Geom-ExtraBoldItalic.ttf
+  static/Geom-BlackItalic.ttf
 
 Get started
 -----------

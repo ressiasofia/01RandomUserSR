@@ -2,14 +2,15 @@
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
+    font-family: Geom,sans-serif
 }
 
 /*font*/
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
 @font-face {
-	font-family: Comfortaa;   /* nome da assegnare al font */
-	src: local(Comfortaa),    /* nome del font eventualmente gi� installato sulla macchina */
-		 url(./font/Comfortaa/static/Comfortaa-Bold.ttf)  format('truetype'); /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
+	font-family: Geom;   /* nome da assegnare al font */
+	src: local(Geom),    /* nome del font eventualmente gi� installato sulla macchina */
+		 url(./font/Geom/static/Geom-Medium.ttf)  format('truetype'); /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
 	font-weight: normal;
 	font-style: normal;
 }
@@ -59,15 +60,15 @@ html,body{
   margin-top: 60px;
   padding: 20px;
   text-align: center;
-  font-family: Comfortaa,sans-serif;
+  font-family: Geom,sans-serif;
 }
 #title{
-  font-family: Comfortaa,sans-serif;
+  font-family: Geom,sans-serif;
   color: #23022E;
   font-size: 20px;
 }
 .navbar {
-  font-family: Comfortaa, sans-serif;
+  font-family: Geom, sans-serif;
 }
 
 /*************************Main: options body ************************/
@@ -111,7 +112,7 @@ input[type="range"]::-moz-range-thumb {
   color: #EFF8E2;
   text-align: center;
 }
-#optionsbody > .row-auto:nth-of-type(2){
+.row-auto:nth-of-type(2){
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,3 +125,4 @@ input[type="range"]::-moz-range-thumb {
 #main > #cardbody{
   width: 1000px
 }
+
