@@ -9,20 +9,21 @@ const slider = document.getElementById("slider");
 const lblSlider = document.getElementsByTagName("label")[0];
 
 //variable
-let nUsers = 0;
+let nUsers = 1;
 
 let params = {
-    results: "50"
+    results: "1"
 }
 
+//functions
 slider.addEventListener("change", function () {
     nUsers = parseInt(slider.value);
     lblSlider.innerHTML = `Users to view: ${nUsers}`;
 
     params.results = nUsers;
+    loadCard(params);
 })
 
-//functions
 loadCard(params);
 
 function loadCard(params) {
@@ -32,6 +33,8 @@ function loadCard(params) {
     promise.then(function (httpResponse) {
         let people = httpResponse.data.results;
         console.log(people)
+
+        cardBody.innerHTML = "";
 
         for (let person of people) {
             let card = document.createElement("div");
@@ -57,8 +60,10 @@ function loadCard(params) {
             cardFront.append(Name);
 
             let cardBack = document.createElement("div");
+            let text = document.createElement("div");
+            
+            //nome,mail,compleanno,address,tel,password
             cardBack.classList.add("cardBack");
-
 
             cardInner.append(cardFront, cardBack);
         }
