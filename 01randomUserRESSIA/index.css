@@ -1,26 +1,35 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: content-box;
-    font-family: Geom,sans-serif;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+  font-family: Geom, sans-serif;
 }
 
 /*font*/
 @import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
+
 @font-face {
-	font-family: Geom;   /* nome da assegnare al font */
-	src: local(Geom),    /* nome del font eventualmente gi� installato sulla macchina */
-		 url(./font/Geom/static/Geom-Medium.ttf)  format('truetype'); /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
-	font-weight: normal;
-	font-style: normal;
+  font-family: Geom;
+  /* nome da assegnare al font */
+  src: local(Geom),
+    /* nome del font eventualmente gi� installato sulla macchina */
+    url(./font/Geom/static/Geom-Medium.ttf) format('truetype');
+  /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
+  font-weight: normal;
+  font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
+
 @font-face {
-	font-family: BBHBartle;   /* nome da assegnare al font */
-	src: local(BBHBartle),    /* nome del font eventualmente gi� installato sulla macchina */
-		 url(./font/BBH_Bartle/BBHBartle-Regular.ttf)  format('truetype'); /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
-	font-weight: normal;
-	font-style: normal;
+  font-family: BBHBartle;
+  /* nome da assegnare al font */
+  src: local(BBHBartle),
+    /* nome del font eventualmente gi� installato sulla macchina */
+    url(./font/BBH_Bartle/BBHBartle-Regular.ttf) format('truetype');
+  /*url= chiedere la risorsa allo stesso server da dove è stata scaricata la pagina*/
+  font-weight: normal;
+  font-style: normal;
 }
 
 /****************************colors*******************************/
@@ -31,106 +40,160 @@
   --darkPurple: #23022E;
   --purple: #573280;
 }
+
 /*background color*/
-.bg-cream { background-color: var(--cream) !important; }
-.bg-lightGrey { background-color: var(--lightGrey) !important; }
-.bg-lavander { background-color: var(--lavander) !important; }
-.bg-darkPurple { background-color: var(--darkPurple) !important; }
-.bg-purple { background-color: var(--purple) !important; }
+.bg-cream {
+  background-color: var(--cream) !important;
+}
+
+.bg-lightGrey {
+  background-color: var(--lightGrey) !important;
+}
+
+.bg-lavander {
+  background-color: var(--lavander) !important;
+}
+
+.bg-darkPurple {
+  background-color: var(--darkPurple) !important;
+}
+
+.bg-purple {
+  background-color: var(--purple) !important;
+}
 
 /*text color*/
-.text-cream { color: var(--cream) !important; }
-.text-lightGrey { color: var(--lightGrey) !important; }
-.text-lavander { color: var(--lavander) !important; }
-.text-darkPurple { color: var(--darkPurple) !important; }
-.text-purple { color: var(--purple) !important; }
+.text-cream {
+  color: var(--cream) !important;
+}
+
+.text-lightGrey {
+  color: var(--lightGrey) !important;
+}
+
+.text-lavander {
+  color: var(--lavander) !important;
+}
+
+.text-darkPurple {
+  color: var(--darkPurple) !important;
+}
+
+.text-purple {
+  color: var(--purple) !important;
+}
 
 /*border color*/
-.border-cream { border-color: var(--cream) !important; }
-.border-lightGrey { border-color: var(--lightGrey) !important; }
-.border-lavander { border-color: var(--lavander) !important; }
-.border-darkPurple { border-color: var(--darkPurple) !important; }
-.border-purple { border-color: var(--purple) !important; }
+.border-cream {
+  border-color: var(--cream) !important;
+}
+
+.border-lightGrey {
+  border-color: var(--lightGrey) !important;
+}
+
+.border-lavander {
+  border-color: var(--lavander) !important;
+}
+
+.border-darkPurple {
+  border-color: var(--darkPurple) !important;
+}
+
+.border-purple {
+  border-color: var(--purple) !important;
+}
 
 /*******************************************************************/
-html,body{
+html,
+body {
   background-color: lightGrey;
 }
-#wrapper{
+
+#wrapper {
   margin-top: 60px;
   padding: 20px;
   text-align: center;
-  font-family: Geom,sans-serif;
+  font-family: Geom, sans-serif;
 }
-#title{
-  font-family: Geom,sans-serif;
+
+#title {
+  font-family: Geom, sans-serif;
   color: #23022E;
   font-size: 20px;
   margin-bottom: 20px;
 }
+
 .navbar {
   font-family: Geom, sans-serif;
 }
 
 /**************************Main*********************************/
-#main{
+#main {
   border: 3px solid #23022E;
   border-radius: 15px;
   height: 500px;
   width: 1000px;
   margin: 0px auto;
 }
+
 /*************************Main: Custome section & modal ************************/
-#main > #optionsbody{
+#main>#optionsbody {
   border: 3px solid #EFF8E2;
   border-radius: 15px;
   height: 500px;
   padding: 10px;
   margin: 10px;
 }
+
 /*slider color*/
 input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 400px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 400px;
 }
+
 /*browser*/
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    background: #573280;
-    border-radius: 50%;
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #573280;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
 /*firefox*/
 input[type="range"]::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    background: #573280;
-    border-radius: 50%;
-    cursor: pointer;
+  width: 18px;
+  height: 18px;
+  background: #573280;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
 /*listbox*/
-#cmdGender{
+#cmdGender {
   width: 400px;
   border-radius: 5px;
   background-color: #573280;
   color: #EFF8E2;
   text-align: center;
 }
-#custome > .row-auto:nth-of-type(2){
+
+#custome>.row-auto:nth-of-type(2) {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 /*nat*/
 
 
 
 /******************Main: card body*********************/
-#main > #cardbody{
+#main>#cardbody {
   width: 900px;
   overflow: auto;
   display: grid;
@@ -143,61 +206,84 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .card {
-    width: 400px;
-    height: 180px;
-    perspective: 1000px;
-    margin: 10px 5px;
-    border: 0px;
-    background: transparent;
-    user-select: none;
+  width: 400px;
+  height: 180px;
+  perspective: 1000px;
+  margin: 10px 5px;
+  border: 0px;
+  background: transparent;
+  user-select: none;
 }
 
 .cardInner {
-    height: 100%;
-    width: 100%;
-    transform-style: preserve-3d;
-    position: relative;
-    transition: transform 1s;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1s;
 }
 
 .cardInner.flipped {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card:hover .cardInner:not(.flipped) {
-    cursor: pointer;
-    transform: scale(1.05);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .cardFront,
 .cardBack {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    position: absolute;
-    backface-visibility: hidden;
-    background-color: #573280;
-    border-radius: 20px;
-    border: 3px, solid, #23022E;
-    color: #CECFC7;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  backface-visibility: hidden;
+  background-color: #573280;
+  border-radius: 20px;
+  border: 3px, solid, #23022E;
+  color: #CECFC7;
 }
 
 .cardFront {
-    transform: rotateY(0deg);
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.45s;
-    font-size: 25px;
+  transform: rotateY(0deg);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.45s;
+  font-size: 25px;
 }
-.cardFront > img{
+
+.cardFront>img {
   border-radius: 50%;
   border: 3px solid #23022E;
 }
+
 .cardBack {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
-
-
+.cardText{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.cardNav{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.cardNav > div{
+  margin: 0px 10px;
+}
