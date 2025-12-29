@@ -38,8 +38,10 @@ const lblSlider = document.getElementsByTagName("label")[0];
 const divDetails = document.getElementsByClassName("divDetail");
 const imgDetails = document.getElementsByClassName("imgDetails")[0];
 const cmdGender = document.getElementById("cmdGender");
-let divNat = document.querySelectorAll("div[nat]");
+const divNat = document.querySelectorAll("div[nat]");
 const btnSave = document.getElementById("btnSave");
+const btnStars = document.getElementById("btnStars");
+const btnGenerate = document.getElementById("btnGenerate");
 
 //variable
 let params = {
@@ -51,7 +53,6 @@ let params = {
 let nUsers = params.results;
 let flip = false;
 lblSlider.innerHTML = `Users to view: ${nUsers}`;
-let cont = 0;
 
 //functions
 slider.addEventListener("change", function () {
@@ -65,19 +66,25 @@ cmdGender.addEventListener("change", function () {
     params.gender = cmdGender.value;
 })
 
-let cnt = 0;
+
 for (let div of divNat) {
+    div.dataset.clicked = false;
     div.addEventListener("click", function () {
-        if (cnt == 0) {
+        let nat = this.getAttribute("nat");
+
+        if (div.dataset.clicked == "false") {
             this.style.backgroundColor = "green";
-            params.nat += this.getAttribute("nat") + ","
-            cnt = 1;
+            params.nat += nat + ","
+            div.dataset.clicked = true;
         }
         else
         {
-            cnt = 0;
+            div.dataset.clicked = false;
             this.style.backgroundColor = "";
-            params.nat += this.getAttribute("nat") + ","
+
+            params.nat = params.nat.split(",").filter(function (nation) {
+                return nation != `${nat}`
+            }).toString();
         }
     })
 }
@@ -86,8 +93,101 @@ btnSave.addEventListener("click",function(){
     loadCard(params);
 })
 
+btnStars.addEventListener("click",function(){
+    let peoplefav = JSON.parse(localStorage.getItem("stars"));
+
+    loadFav(peoplefav);
+})
+btnGenerate.addEventListener("click",function(){
+    params = {
+    results: "6",
+    nat:"",
+    gender:""}
+    
+    loadCard(params);
+})
 
 loadCard(params);
+
+function loadFav(people){
+    cardBody.innerHTML = "";
+    let index = 0;
+
+    for(let person of people){
+        let card = document.createElement("div");
+            card.classList.add("card");
+            cardBody.append(card);
+
+            let cardInner = document.createElement("div");
+            cardInner.classList.add("cardInner");
+            cardInner.addEventListener("click", function () {
+                if (!flip)
+                    $(this).toggleClass("flipped");
+
+                flip = false;
+            })
+            card.append(cardInner);
+
+            //*******************CARD FRONT***************************** */
+            let cardFront = document.createElement("div");
+            cardFront.classList.add("cardFront");
+
+            let star = document.createElement("div");
+            star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+            star.dataset.clicked = true;
+            star.classList.add("star");
+
+            star.addEventListener("click", function () {
+                starred(this,person);
+                flip = true;
+            })
+            cardFront.append(star);
+
+            let img = document.createElement("img");
+            img.src = `${person.picture.medium}`;
+            cardFront.append(img);
+
+            let Name = document.createElement("div");
+            Name.textContent = `${person.name.first} ${person.name.last}`;
+            cardFront.append(Name);
+
+            //****************CARD BACK****************************
+            let cardBack = document.createElement("div");
+
+            let info = document.createElement("button");
+            info.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>`;
+            info.classList.add("star");
+            info.classList.add("btn");
+            info.dataset.person = index;
+            index++;
+            info.setAttribute("data-bs-target", "#modalDetails");
+            info.setAttribute("data-bs-toggle", "modal");
+            info.addEventListener("click", function () {
+                flip = true;
+                showDetails(people[this.dataset.person]);
+            })
+
+            let text = document.createElement("div");
+            let navbar = document.createElement("div");
+
+            let textMini = document.createElement("div");
+            let label = document.createElement("div");
+            textMini.textContent = "Hi, my name is ";
+            label.textContent = `${person.name.first} ${person.name.last}`;
+
+            text.append(textMini, label);
+
+            text.classList.add("cardText");
+            navbar.classList.add("cardNav");
+
+            loadUserNav(navbar, person);
+
+            cardBack.append(text, navbar, info);
+            cardBack.classList.add("cardBack");
+
+            cardInner.append(cardFront, cardBack);
+    }
+}
 
 function loadCard(params) {
     let promise = ajax.sendRequest("GET", "./api", params);
@@ -95,7 +195,7 @@ function loadCard(params) {
     promise.catch(ajax.errore);
     promise.then(function (httpResponse) {
         let people = httpResponse.data.results;
-        console.log(people)
+        //console.log(people)
 
         cardBody.innerHTML = "";
         let index = 0;
@@ -120,10 +220,11 @@ function loadCard(params) {
 
             let star = document.createElement("div");
             star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+            star.dataset.clicked = false;
             star.classList.add("star");
 
             star.addEventListener("click", function () {
-                starred(this);
+                starred(this,person);
                 flip = true;
             })
             cardFront.append(star);
@@ -204,14 +305,16 @@ function loadUserNav(nav, person) {
     }
 }
 
-function starred(star) {
-    if (cont == 0) {
-        cont = 1;
+function starred(star,person) {
+    if (star.dataset.clicked == "false") {
+        star.dataset.clicked = true;
         star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+        saveLS("stars",person);
     }
     else {
-        cont = 0;
+        star.dataset.clicked = false;
         star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+        deleteInLS("stars",person);
     }
 }
 
@@ -222,4 +325,25 @@ function showDetails(person) {
     divDetails[2].textContent = `${person.location.city}`;
     divDetails[3].textContent = `${person.location.country} (${person.nat})`;
     divDetails[4].textContent = `${person.login.username}`;
+}
+
+function saveLS(key, person) {
+    let json = JSON.parse(localStorage.getItem(key));
+
+    if(!json){
+        json = [];
+    }
+
+    json.push(person);
+    localStorage.setItem(key, JSON.stringify(json));
+}
+
+function deleteInLS(key, person) {
+  let json = JSON.parse(localStorage.getItem(key));
+
+  json = json.filter(function (element) {
+    return element.name.first != person.name.first;
+  });
+
+  localStorage.setItem(key, JSON.stringify(json));
 }
