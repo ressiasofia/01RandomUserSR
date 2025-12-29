@@ -135,8 +135,33 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /*nat*/
-
-
+#flagBox{
+  border: 2px solid #573280;
+  border-radius: 15px;
+  width: 460px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+}
+#flagBox > div > img{
+  width: 60px;
+}
+#flagBox > div{
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#flagBox > div:hover{
+  background-color: #573280;
+  transform: scale(1.05);
+}
 
 /******************Main: card body*********************/
 #main>#cardbody {

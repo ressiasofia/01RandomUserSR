@@ -89,24 +89,61 @@
                                     <br>
                                     <div class="row-auto">
                                         <select name="cmdGender" id="cmdGender">
-                                            <option>All</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
+                                            <option value="">All</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
                                         </select>
                                     </div>
                                     <br>
                                     <div class="row-auto">
                                         <p>Select the nationality:</p>
-                                        <div>
-                                            <div></div>
+                                        <div class="container">
+                                            <div class="row text-center" id="flagBox">
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="US">
+                                                    <img src="./img/us.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="BR">
+                                                   <img src="./img/br.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="ES">
+                                                    <img src="./img/es.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="GB">
+                                                    <img src="./img/gb.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="CA">
+                                                    <img src="./img/ca.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="FR">
+                                                    <img src="./img/fr.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="NZ">
+                                                    <img src="./img/nz.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="IN">
+                                                    <img src="./img/in.png" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="col-12 col-md-6 col-lg-4 mb-3" nat="DE">
+                                                    <img src="./img/de.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
                                         </div>
-                                         
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
-                                <button class="btn btn-success">Salva</button>
+                                <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <button class="btn btn-success" id="btnSave" data-bs-dismiss="modal">Generate</button>
                             </div>
                         </div>
                     </div>
@@ -154,6 +191,11 @@
                                 <img src="" alt="" class="imgDetails">
                             </div>
                             <br>
+                            <div class="row mb-2">
+                                <div class="col-4 fw-bold text-end">Gender:</div>
+                                <div class="col-4 divDetail"></div>
+                            </div>
+
                             <div class="row mb-2">
                                 <div class="col-4 fw-bold text-end">Age:</div>
                                 <div class="col-4 divDetail"></div>

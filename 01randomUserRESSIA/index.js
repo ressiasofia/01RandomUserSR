@@ -38,10 +38,14 @@ const lblSlider = document.getElementsByTagName("label")[0];
 const divDetails = document.getElementsByClassName("divDetail");
 const imgDetails = document.getElementsByClassName("imgDetails")[0];
 const cmdGender = document.getElementById("cmdGender");
+let divNat = document.querySelectorAll("div[nat]");
+const btnSave = document.getElementById("btnSave");
 
 //variable
 let params = {
-    results: "6"
+    results: "6",
+    nat:"",
+    gender:""
 }
 
 let nUsers = params.results;
@@ -55,12 +59,33 @@ slider.addEventListener("change", function () {
     lblSlider.innerHTML = `Users to view: ${nUsers}`;
 
     params.results = nUsers;
+})
+
+cmdGender.addEventListener("change", function () {
+    params.gender = cmdGender.value;
+})
+
+let cnt = 0;
+for (let div of divNat) {
+    div.addEventListener("click", function () {
+        if (cnt == 0) {
+            this.style.backgroundColor = "green";
+            params.nat += this.getAttribute("nat") + ","
+            cnt = 1;
+        }
+        else
+        {
+            cnt = 0;
+            this.style.backgroundColor = "";
+            params.nat += this.getAttribute("nat") + ","
+        }
+    })
+}
+
+btnSave.addEventListener("click",function(){
     loadCard(params);
 })
 
-cmdGender.addEventListener("change",function(){
-    
-})
 
 loadCard(params);
 
@@ -81,8 +106,8 @@ function loadCard(params) {
 
             let cardInner = document.createElement("div");
             cardInner.classList.add("cardInner");
-            cardInner.addEventListener("click",function(){
-                if(!flip)
+            cardInner.addEventListener("click", function () {
+                if (!flip)
                     $(this).toggleClass("flipped");
 
                 flip = false;
@@ -97,7 +122,7 @@ function loadCard(params) {
             star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
             star.classList.add("star");
 
-            star.addEventListener("click",function(){
+            star.addEventListener("click", function () {
                 starred(this);
                 flip = true;
             })
@@ -120,9 +145,9 @@ function loadCard(params) {
             info.classList.add("btn");
             info.dataset.person = index;
             index++;
-            info.setAttribute("data-bs-target","#modalDetails");
-            info.setAttribute("data-bs-toggle","modal");
-            info.addEventListener("click",function(){
+            info.setAttribute("data-bs-target", "#modalDetails");
+            info.setAttribute("data-bs-toggle", "modal");
+            info.addEventListener("click", function () {
                 flip = true;
                 showDetails(people[this.dataset.person]);
             })
@@ -135,14 +160,14 @@ function loadCard(params) {
             textMini.textContent = "Hi, my name is ";
             label.textContent = `${person.name.first} ${person.name.last}`;
 
-            text.append(textMini,label);
+            text.append(textMini, label);
 
             text.classList.add("cardText");
             navbar.classList.add("cardNav");
 
-            loadUserNav(navbar,person);
+            loadUserNav(navbar, person);
 
-            cardBack.append(text,navbar,info);
+            cardBack.append(text, navbar, info);
             cardBack.classList.add("cardBack");
 
             cardInner.append(cardFront, cardBack);
@@ -150,7 +175,7 @@ function loadCard(params) {
     })
 }
 
-function loadUserNav(nav,person){
+function loadUserNav(nav, person) {
     let info = [
         `${person.name.first} ${person.name.last}`,
         `${person.email}`,
@@ -161,14 +186,14 @@ function loadUserNav(nav,person){
     ]
 
     let i = 0;
-    for(let icon of Icons){
+    for (let icon of Icons) {
         let navElement = document.createElement("div");
 
         navElement.dataset.text = icon.text;
         navElement.dataset.value = info[i];
         navElement.innerHTML = icon.icon;
 
-        navElement.addEventListener("click",function(){
+        navElement.addEventListener("click", function () {
             flip = true;
             this.parentElement.parentElement.firstElementChild.firstElementChild.textContent = this.dataset.text;
             this.parentElement.parentElement.firstElementChild.lastElementChild.textContent = this.dataset.value;
@@ -179,22 +204,22 @@ function loadUserNav(nav,person){
     }
 }
 
-function starred(star){
-    if(cont == 0){
+function starred(star) {
+    if (cont == 0) {
         cont = 1;
         star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
     }
-    else
-    {
+    else {
         cont = 0;
         star.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
     }
 }
 
-function showDetails(person){
+function showDetails(person) {
     imgDetails.src = `${person.picture.large}`;
-    divDetails[0].textContent = `${person.dob.age}`;
-    divDetails[1].textContent = `${person.location.city}`;
-    divDetails[2].textContent = `${person.location.country}`;
-    divDetails[3].textContent = `${person.login.username}`;
+    divDetails[0].textContent = `${person.gender}`;
+    divDetails[1].textContent = `${person.dob.age}y`;
+    divDetails[2].textContent = `${person.location.city}`;
+    divDetails[3].textContent = `${person.location.country} (${person.nat})`;
+    divDetails[4].textContent = `${person.login.username}`;
 }
