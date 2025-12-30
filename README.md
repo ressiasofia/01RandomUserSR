@@ -33,14 +33,14 @@ Ogni carta viene generata tramite la funzione principale `loadCard` che è resa 
 
 Nella parte posteriore invece troviamo una piccola navbar sul basso che al click permette di visualizzare le informazioni principali (come da randomUser) dell'utente, in alto a destra un pulsante (informazioni) che al click apre un modal contenente ulteriori informazioni riguardanti l'utente
 
-## Castomize bar
+## Customize bar
 
 Di finaco al contenitore card è presente un'altra piccola navbar composta da 3 pulsanti che permettono la visualizzazione e personalizzazione degli utenti.
 Andando per ordine troviamo
 | Nome punsante | Funzionalità |
 | :--- | :---|
 | `Generate` | Al click vengono semplicemente rigenerati 6 users casuali, utilizzato per uscire dalla zona dei preferiti o per annullare in modo veloce le personalizzazioni. |
-| `Castomize` | Al click apre un modal contenente diverse modalità di personalizzazione, uno slider per la quantità di utenti, una listbox per selezionare `male or female` e infine una griglia di div che assumendo il comportamento delle normali checkbox permettono di selezionare una o più nazioni come desiderato. Al fondo due pulsanti permettobo di chiudere il modal senza effettuare modifiche oppure salvare e apportare le evenutali personalizzazioni scelte |
+| `Customize` | Al click apre un modal contenente diverse modalità di personalizzazione, uno slider per la quantità di utenti, una listbox per selezionare `male or female` e infine una griglia di div che assumendo il comportamento delle normali checkbox permettono di selezionare una o più nazioni come desiderato. Al fondo due pulsanti permettobo di chiudere il modal senza effettuare modifiche oppure salvare e apportare le evenutali personalizzazioni scelte |
 | `Stars` | Al click permette di visualizzare gli utenti salvati tra i preferiti, viene utilizzato il `localStorage` per occuparsi di recuperare e mantenere gli utenti |
 
 Da notare come il comportamento delle card rimane invariato qualunche visualizzazione sia attivata.
@@ -53,7 +53,7 @@ Il footer si presenta molto semplice e lineare con un link al mio profilo su Git
 
 Il responsive è stato gestito tramite Bootstrap e CSS utilizzando le mediaQuery.
 
-Quando si visualizza il sito su schermi più piccoli come un tablet o un telefono , rimanono invariati il comportamento di Navbar e Footer ma il `main` cambia disposizione inserendo le card una in coda all'altra utilizzando `dispaly:block` e la sezione Castomize viene visualizzata sotto alle carte come dei pulsanti di navigazione.
+Quando si visualizza il sito su schermi più piccoli come un tablet o un telefono , rimanono invariati il comportamento di Navbar e Footer ma il `main` cambia disposizione inserendo le card una in coda all'altra utilizzando `dispaly:block` e la sezione Customize viene visualizzata sotto alle carte come dei pulsanti di navigazione.
 Il comportamento dei pulsanti e della visualizzazione delle carte rimane invariato qualunque sia la modalità utilizzata.
 
 La visualizzazione dello User photos si dimensiona in base alla grandezza dello schermo ma permettendo sempre le stesse funzionalità
