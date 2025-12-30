@@ -41,6 +41,8 @@ Andando per ordine troviamo
 | :--- | :---|
 | `Generate` | Al click vengono semplicemente rigenerati 6 users casuali, utilizzato per uscire dalla zona dei preferiti o per annullare in modo veloce le personalizzazioni. |
 | `Castomize` | Al click apre un modal contenente diverse modalità di personalizzazione, uno slider per la quantità di utenti, una listbox per selezionare `male or female` e infine una griglia di div che assumendo il comportamento delle normali checkbox permettono di selezionare una o più nazioni come desiderato. Al fondo due pulsanti permettobo di chiudere il modal senza effettuare modifiche oppure salvare e apportare le evenutali personalizzazioni scelte |
-| Stars | Al click permette di visualizzare gli utenti salvati tra i preferiti, viene utilizzato il `localStorage` per occuparsi di recuperare e mantenere gli utenti |
+| `Stars` | Al click permette di visualizzare gli utenti salvati tra i preferiti, viene utilizzato il `localStorage` per occuparsi di recuperare e mantenere gli utenti |
+
+Da notare come il comportamento delle card rimane invariato qualunche visualizzazione sia attivata.
 
 30/12/2025
