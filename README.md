@@ -10,6 +10,7 @@ La pagina presenta un titolo principale con alcune animazioni per rendelo più i
 Per questa pagina viene utilizzato un font specifico presente nella cartella font del progetto, inoltre è stata sempre utilizzata una palette di colori tendente dal color crema al viola scuro.
 
 ![palette di colori](./01randomUserRESSIA/img/palette.png)
+Ricavata da https://coolors.co
 
 # Funzionalità e specifiche tecniche del progetto
 
