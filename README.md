@@ -4,7 +4,7 @@ Sofia Ressia - Classe 4BINF, IIS G.Vallauri
 
 ## First page
 
-La prima pagina visualizzata è la pagina principale nominata `firstPage.html` a cui sono linkati un css e un js.
+La prima pagina visualizzata è la pagina principale nominata `firstPage.html` a cui sono linkati un CSS e un JS.
 La pagina presenta un titolo principale con alcune animazioni per rendelo più interattivo e un click su l'intera pagina che permette di accedere all' `index.html`.
 
 Per questa pagina viene utilizzato un font specifico presente nella cartella font del progetto, inoltre è stata sempre utilizzata una palette di colori tendente dal color crema al viola scuro.
@@ -44,5 +44,18 @@ Andando per ordine troviamo
 | `Stars` | Al click permette di visualizzare gli utenti salvati tra i preferiti, viene utilizzato il `localStorage` per occuparsi di recuperare e mantenere gli utenti |
 
 Da notare come il comportamento delle card rimane invariato qualunche visualizzazione sia attivata.
+
+## Footer
+
+Il footer è molto semplice e lineare, presenta un link al mio profilo su GitHub e un link al profilo Instagram. Anche nella navbar è stato inserito il logo.
+
+# Responsive
+
+Il resposnive è stato gestito tramite Bootstrap e CSS utilizzando le mediaQuery.
+
+Quando si visualizza il sito su schermi più piccoli come un tablet o un telefono , rimanono invariati il comportamento di Navbar e Footer ma il `main` cambia disposizione inserendo le card una in coda all'altra utilizzando `dispaly:block` e la sezione Castomize viene visualizzata sotto alle carte come dei pulsanti di navigazione.
+Il comportamento dei pulsanti e della visualizzazione delle carte rimane invariato qualunque sia la modalità utilizzata.
+
+La visualizzazione dello User photos si dimensiona in base alla grandezza dello schermo ma permettendo sempre le stesse funzionalità
 
 30/12/2025
