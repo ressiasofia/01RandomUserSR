@@ -47,11 +47,11 @@ Da notare come il comportamento delle card rimane invariato qualunche visualizza
 
 ## Footer
 
-Il footer è molto semplice e lineare, presenta un link al mio profilo su GitHub e un link al profilo Instagram. Anche nella navbar è stato inserito il logo.
+Il footer si presenta molto semplice e lineare con un link al mio profilo su GitHub e un link al profilo Instagram. Anche nella qui come nella navbar è stato inserito il logo.
 
 # Responsive
 
-Il resposnive è stato gestito tramite Bootstrap e CSS utilizzando le mediaQuery.
+Il responsive è stato gestito tramite Bootstrap e CSS utilizzando le mediaQuery.
 
 Quando si visualizza il sito su schermi più piccoli come un tablet o un telefono , rimanono invariati il comportamento di Navbar e Footer ma il `main` cambia disposizione inserendo le card una in coda all'altra utilizzando `dispaly:block` e la sezione Castomize viene visualizzata sotto alle carte come dei pulsanti di navigazione.
 Il comportamento dei pulsanti e della visualizzazione delle carte rimane invariato qualunque sia la modalità utilizzata.
