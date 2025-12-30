@@ -29,16 +29,18 @@ Al centro della pagina è presente un contenitore suddiviso in due grandi box: `
 
 ## Card
 
-Ogni carta viene generata tramite la funzione principale `loadCard` che è resa generale anche per la personalizzazione degli utenti. Ogni carta presenta una parte frontale e una posteriore, nella prima viene visualizzata una foto e il nome completo dell'utente e inoltre contiene in alto a destra anche un pulsante (stellina) che al click rende un "preferito" l'utente.
+Ogni carta viene generata tramite la funzione principale `loadCard` che è resa generale anche per la personalizzazione degli utenti. Ogni carta presenta una parte frontale e una posteriore, nella prima viene visualizzata una foto e il nome completo dell'utente e inoltre contiene in alto a destra anche un pulsante (stellina) che al click rende un "preferito" l'utente oppure se ricliccata rimuove l'utente dai preferiti.
 
 Nella parte posteriore invece troviamo una piccola navbar sul basso che al click permette di visualizzare le informazioni principali (come da randomUser) dell'utente, in alto a destra un pulsante (informazioni) che al click apre un modal contenente ulteriori informazioni riguardanti l'utente
 
-## Catomize bar
+## Castomize bar
 
 Di finaco al contenitore card è presente un'altra piccola navbar composta da 3 pulsanti che permettono la visualizzazione e personalizzazione degli utenti.
 Andando per ordine troviamo
 | Nome punsante | Funzionalità |
 | :--- | :---|
-| Generate | Al click vengono semplicemente rigenerati 6 users casuali, utilizzato per uscire dalla zona dei preferiti o per annullare in modo veloce le personalizzazioni. |
+| `Generate` | Al click vengono semplicemente rigenerati 6 users casuali, utilizzato per uscire dalla zona dei preferiti o per annullare in modo veloce le personalizzazioni. |
+| `Castomize` | Al click apre un modal contenente diverse modalità di personalizzazione, uno slider per la quantità di utenti, una listbox per selezionare `male or female` e infine una griglia di div che assumendo il comportamento delle normali checkbox permettono di selezionare una o più nazioni come desiderato. Al fondo due pulsanti permettobo di chiudere il modal senza effettuare modifiche oppure salvare e apportare le evenutali personalizzazioni scelte |
+| Stars | Al click permette di visualizzare gli utenti salvati tra i preferiti, viene utilizzato il `localStorage` per occuparsi di recuperare e mantenere gli utenti |
 
 30/12/2025
