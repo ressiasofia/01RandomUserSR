@@ -152,11 +152,13 @@ txtSearch.addEventListener("change", function () {
 loadCard(params, Name);
 
 function loadUserPhoto(params) {
+    let mainStyle = window.getComputedStyle(main);
 
     main.classList.remove("d-lg-flex","d-block");
     main.style.overflow = "auto";
     main.style.display = "grid";
-    if(main.style.width <= "992px")
+    console.log(mainStyle.width)
+    if(parseInt(mainStyle.width) <= 992)
     {
         main.style.gridTemplateColumns = "1fr 1fr 1fr";
     }
