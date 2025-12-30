@@ -34,12 +34,12 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navBar">
-                    <ul class="navbar-nav">
-                        <li class="tag-item" id="allUsers"><a href="#" class="nav-link text-darkPurple">All users
-                                photos</a></li>
+                    <ul class="navbar-nav text-darkPurple">
+                        <li class="tag-item"><a href="" class="nav-link">Home</a></li>
+                        <li class="tag-item m-2" id="allUsers">All users photos</li>
                         <li class="tag-item text-darkPurple" id="search">
                             <div class="form">
-                                <input type="text" class="form-control" placeholder="🔍︎ search" id="txtRicerca">
+                                <input type="text" class="form-control" placeholder="🔍︎ search by name" id="txtSearch">
                             </div>
                         </li>
                     </ul>
@@ -49,10 +49,10 @@
         </nav>
     </div>
 
-    <div id="wrapper">
+    <div id="wrapper" class="container">
         <h1 id="title">Generate here your random user</h1>
 
-        <div id="main" class="d-flex">
+        <div id="main" class="d-flex container">
 
             <div id="cardbody">
                 <!-- <div class="card">
@@ -193,6 +193,11 @@
                                 <img src="" alt="" class="imgDetails">
                             </div>
                             <br>
+                            <div class="row mb-2">
+                                <div class="col-4 fw-bold text-end">Name:</div>
+                                <div class="col-4 divDetail"></div>
+                            </div>
+
                             <div class="row mb-2">
                                 <div class="col-4 fw-bold text-end">Gender:</div>
                                 <div class="col-4 divDetail"></div>

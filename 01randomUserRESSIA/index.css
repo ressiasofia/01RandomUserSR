@@ -68,7 +68,17 @@ body {
 .navbar {
   font-family: Geom, sans-serif;
 }
-
+#allUsers:hover{
+  cursor: pointer;
+}
+.photoDiv{
+  width: 100px;
+  height: 100px;
+  border: 7px solid #573280;
+}
+.photoDiv > img{
+  width: 100px;
+}
 /**************************Main*********************************/
 #main {
   border: 3px solid #23022E;
@@ -76,6 +86,9 @@ body {
   height: 500px;
   width: 1000px;
   margin: 0px auto;
+}
+#main::-webkit-scrollbar {
+  display: none;
 }
 
 /*************************Main: Custome section & modal ************************/
@@ -216,6 +229,7 @@ input[type="range"]::-moz-range-thumb {
   color: #CECFC7;
 }
 
+/************************Card front**********************************/
 .cardFront {
   transform: rotateY(0deg);
   display: flex;
@@ -238,6 +252,7 @@ input[type="range"]::-moz-range-thumb {
   margin-right: 3px;
 }
 
+/*************************Card back**********************************/
 .cardBack {
   transform: rotateY(180deg);
   display: flex;
@@ -267,7 +282,6 @@ input[type="range"]::-moz-range-thumb {
 .cardNav > div{
   margin: 0px 10px;
 }
-
 #coneinerDet{
   text-align: center;
 }

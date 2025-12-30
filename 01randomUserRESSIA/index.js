@@ -30,7 +30,7 @@ const Icons = [
 
 //pointers
 const main = document.getElementById("main");
-const optionsBody = document.getElementById("optionsbody");
+const customeBody = document.getElementById("customeBody");
 const cardBody = document.getElementById("cardbody");
 
 const slider = document.getElementById("slider");
@@ -42,6 +42,8 @@ const divNat = document.querySelectorAll("div[nat]");
 const btnSave = document.getElementById("btnSave");
 const btnStars = document.getElementById("btnStars");
 const btnGenerate = document.getElementById("btnGenerate");
+const btnAllUser = document.getElementById("allUsers");
+const txtSearch = document.getElementById("txtSearch");
 
 //variable
 let params = {
@@ -107,7 +109,65 @@ btnGenerate.addEventListener("click",function(){
     loadCard(params);
 })
 
+btnAllUser.addEventListener("click",function(){
+    customeBody.style.display = "none";
+    cardBody.style.display = "none";
+
+    params = {
+        results:"500"
+    }
+    loadUserPhoto(params);
+})
+
+txtSearch.addEventListener("input",function(){
+    let name = this.value;
+    
+    params = {
+        results:"6",
+        
+    }
+    loadCard(params);
+})
+
 loadCard(params);
+
+function loadUserPhoto(params){
+
+    main.classList.remove("d-flex");
+    main.style.overflow = "auto";
+    main.style.display = "grid";
+    main.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr";
+    main.style.justifyItems = "center";
+
+    let promise = ajax.sendRequest("GET", "./api", params);
+
+    promise.catch(ajax.errore);
+    promise.then(function (httpResponse) {
+        let people = httpResponse.data.results;
+
+        main.innerHTML = "";
+        let index = 0;
+
+        for(let person of people){
+
+            let photo = document.createElement("div");
+            photo.dataset.person = index;
+            index++;
+            photo.setAttribute("data-bs-target", "#modalDetails");
+            photo.setAttribute("data-bs-toggle", "modal");
+            photo.classList.add("photoDiv");
+
+            photo.addEventListener("click",function(){
+                showDetails(people[this.dataset.person]);
+            })
+            main.append(photo);
+
+            let img = document.createElement("img");
+            img.src = `${person.picture.medium}`;
+            photo.append(img);
+        }
+    })
+}
 
 function loadFav(people){
     cardBody.innerHTML = "";
@@ -320,11 +380,12 @@ function starred(star,person) {
 
 function showDetails(person) {
     imgDetails.src = `${person.picture.large}`;
-    divDetails[0].textContent = `${person.gender}`;
-    divDetails[1].textContent = `${person.dob.age}y`;
-    divDetails[2].textContent = `${person.location.city}`;
-    divDetails[3].textContent = `${person.location.country} (${person.nat})`;
-    divDetails[4].textContent = `${person.login.username}`;
+    divDetails[0].textContent = `${person.name.first} ${person.name.last}`;
+    divDetails[1].textContent = `${person.gender}`;
+    divDetails[2].textContent = `${person.dob.age}y`;
+    divDetails[3].textContent = `${person.location.city}`;
+    divDetails[4].textContent = `${person.location.country} (${person.nat})`;
+    divDetails[5].textContent = `${person.login.username}`;
 }
 
 function saveLS(key, person) {
