@@ -44,6 +44,8 @@ const btnStars = document.getElementById("btnStars");
 const btnGenerate = document.getElementById("btnGenerate");
 const btnAllUser = document.getElementById("allUsers");
 const txtSearch = document.getElementById("txtSearch");
+const footer = document.getElementById("footer");
+const btnCustomize = document.getElementById("btnCustomize");
 
 //variable
 let params = {
@@ -70,6 +72,11 @@ cmdGender.addEventListener("change", function () {
     params.gender = cmdGender.value;
 })
 
+btnCustomize.addEventListener("click",function(){
+    if(main.style.width <= "992px"){
+        footer.style.position = ""
+    }
+})
 
 for (let div of divNat) {
     div.dataset.clicked = false;
@@ -99,9 +106,18 @@ btnSave.addEventListener("click", function () {
 btnStars.addEventListener("click", function () {
     let peoplefav = JSON.parse(localStorage.getItem("stars"));
 
+    if(main.style.width <= "992px"){
+        footer.style.position = "fixed"
+        footer.style.bottom = "0px";
+    }
+
     loadFav(peoplefav);
 })
 btnGenerate.addEventListener("click", function () {
+    if(main.style.width <= "992px"){
+        footer.style.position = ""
+    }
+
     params = {
         results: "6",
         nat: "",
@@ -137,10 +153,18 @@ loadCard(params, Name);
 
 function loadUserPhoto(params) {
 
-    main.classList.remove("d-flex");
+    main.classList.remove("d-lg-flex","d-block");
     main.style.overflow = "auto";
     main.style.display = "grid";
-    main.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr";
+    if(main.style.width <= "992px")
+    {
+        main.style.gridTemplateColumns = "1fr 1fr 1fr";
+    }
+    else
+    {
+        main.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr";
+    }
+    
     main.style.justifyItems = "center";
 
     let promise = ajax.sendRequest("GET", "./api", params);
@@ -263,8 +287,11 @@ function loadCard(params, Name) {
         //console.log(people)
 
         cardBody.innerHTML = "";
-        let index = 0;
+        let index = -1;
         for (let person of people) {
+
+            index++;
+
             if (Name.toUpperCase() == person.name.first.toUpperCase() || Name == "") {
                 let card = document.createElement("div");
                 card.classList.add("card");
@@ -311,7 +338,7 @@ function loadCard(params, Name) {
                 info.classList.add("star");
                 info.classList.add("btn");
                 info.dataset.person = index;
-                index++;
+                
                 info.setAttribute("data-bs-target", "#modalDetails");
                 info.setAttribute("data-bs-toggle", "modal");
                 info.addEventListener("click", function () {
