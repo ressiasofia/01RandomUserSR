@@ -25,12 +25,20 @@ Al click sull' `All user photos` vengono visualizzate 100 immagini di utenti cas
 
 ## Main
 
-Al centro della pagina è presente un contenitore suddiviso in due grandi box: `cardbox` contenete le carte e i loro dettagli e `castumizeBox` contenete i pulsanti per la visualizzazione personalizzata degli utenti.
+Al centro della pagina è presente un contenitore suddiviso in due grandi box: `cardbox` contenete le carte e i loro dettagli e `castomizeBox` contenete i pulsanti per la visualizzazione personalizzata degli utenti.
 
 ## Card
 
 Ogni carta viene generata tramite la funzione principale `loadCard` che è resa generale anche per la personalizzazione degli utenti. Ogni carta presenta una parte frontale e una posteriore, nella prima viene visualizzata una foto e il nome completo dell'utente e inoltre contiene in alto a destra anche un pulsante (stellina) che al click rende un "preferito" l'utente.
 
 Nella parte posteriore invece troviamo una piccola navbar sul basso che al click permette di visualizzare le informazioni principali (come da randomUser) dell'utente, in alto a destra un pulsante (informazioni) che al click apre un modal contenente ulteriori informazioni riguardanti l'utente
+
+## Catomize bar
+
+Di finaco al contenitore card è presente un'altra piccola navbar composta da 3 pulsanti che permettono la visualizzazione e personalizzazione degli utenti.
+Andando per ordine troviamo
+| Nome punsante | Funzionalità |
+| :--- | :---|
+| Generate | Al click vengono semplicemente rigenerati 6 users casuali, utilizzato per uscire dalla zona dei preferiti o per annullare in modo veloce le personalizzazioni. |
 
 30/12/2025
