@@ -25,7 +25,7 @@ Al click sull' `All user photos` vengono visualizzate 100 immagini di utenti cas
 
 ## Main
 
-Al centro della pagina è presente un contenitore suddiviso in due grandi box: `cardbox` contenete le carte e i loro dettagli e `castomizeBox` contenete i pulsanti per la visualizzazione personalizzata degli utenti.
+Al centro della pagina è presente un contenitore suddiviso in due grandi box: `cardbox` contenete le carte e i loro dettagli e `customizeBox` contenete i pulsanti per la visualizzazione personalizzata degli utenti.
 
 ## Card
 
